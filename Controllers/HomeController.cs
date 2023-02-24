@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission8.Models;
 using System;
@@ -11,12 +12,12 @@ namespace Mission8.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private TasksContext theContext { get; set; }
        
         //Constructor
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(TasksContext taskName)
         {
-            _logger = logger;
+            theContext = taskName;
             
         }
 
@@ -27,6 +28,16 @@ namespace Mission8.Controllers
 
        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
+        public IActionResult QuadrantView()
+        {
+            var applications = theContext.Responses
+                //.Include(x => x.Categories)
+                //.OrderBy(x => x.Title)
+                .ToList();
+
+            return View(applications);
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
