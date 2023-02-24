@@ -58,7 +58,9 @@ namespace Mission8.Controllers
 
         public IActionResult QuadrantView()
         {
-            return View();
+            var application = theContext.Responses.ToList();
+
+            return View(application);
         }
         
         //Views 
