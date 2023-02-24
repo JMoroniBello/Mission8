@@ -8,8 +8,8 @@ using Mission8.Models;
 namespace Mission8.Migrations
 {
     [DbContext(typeof(TasksContext))]
-    [Migration("20230223181528_Initial")]
-    partial class Initial
+    [Migration("20230224051715_seeded")]
+    partial class seeded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,11 +72,61 @@ namespace Mission8.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Task")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("TaskId");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Responses");
+
+                    b.HasData(
+                        new
+                        {
+                            TaskId = 1,
+                            CategoryId = (byte)1,
+                            Completed = false,
+                            DueDate = "Today",
+                            Quadrant = (byte)1,
+                            Task = "Eat"
+                        },
+                        new
+                        {
+                            TaskId = 2,
+                            CategoryId = (byte)2,
+                            Completed = true,
+                            DueDate = "Today",
+                            Quadrant = (byte)1,
+                            Task = "Eat"
+                        },
+                        new
+                        {
+                            TaskId = 3,
+                            CategoryId = (byte)3,
+                            Completed = false,
+                            DueDate = "Today",
+                            Quadrant = (byte)1,
+                            Task = "Eat"
+                        },
+                        new
+                        {
+                            TaskId = 4,
+                            CategoryId = (byte)4,
+                            Completed = true,
+                            DueDate = "Today",
+                            Quadrant = (byte)1,
+                            Task = "Eat"
+                        });
+                });
+
+            modelBuilder.Entity("Mission8.Models.TaskResponse", b =>
+                {
+                    b.HasOne("Mission8.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

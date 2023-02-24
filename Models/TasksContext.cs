@@ -27,6 +27,47 @@ namespace Mission8.Models
                     new Category { CategoryId = 4, CategoryName = "Church"}
                 
                 );
+
+            mb.Entity<TaskResponse>().HasData(
+                new TaskResponse
+                {
+                    TaskId = 1,
+                    CategoryId = 1,
+                    Task = "Eat",
+                    DueDate = "Today",
+                    Quadrant = 1,
+                    Completed = false
+                },
+                new TaskResponse
+                {
+
+                    TaskId = 2,
+                    CategoryId = 2,
+                    Task = "Eat",
+                    DueDate = "Today",
+                    Quadrant = 1,
+                    Completed = true
+                },
+                new TaskResponse
+                {
+                    TaskId = 3,
+                    CategoryId = 3,
+                    Task = "Eat",
+                    DueDate = "Today",
+                    Quadrant = 1,
+                    Completed = false
+                },
+                new TaskResponse
+                {
+                    TaskId = 4,
+                    CategoryId = 4,
+                    Task = "Eat",
+                    DueDate = "Today",
+                    Quadrant = 1,
+                    Completed = true
+                }
+
+            );
         }
     }
 }

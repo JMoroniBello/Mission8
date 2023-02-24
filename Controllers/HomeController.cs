@@ -31,5 +31,15 @@ namespace Mission8.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult QuadrantView()
+        {
+            //var applications = theContext.Responses
+            //.Include(x => x.Categories)
+            //.OrderBy(x => x.Title)
+            //.ToList();
+
+            return View();
+        }
     }
 }
