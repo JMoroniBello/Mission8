@@ -26,7 +26,7 @@ namespace Mission8.Controllers
             return View();
         }
 
-        //Get and post views for adding something to the database; where a user can submit things
+        //Get and post for adding something to the database; where a user can submit things on the website and it will get added to the database
 
         [HttpGet]
         public IActionResult AddView()

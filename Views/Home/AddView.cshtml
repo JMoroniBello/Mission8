@@ -3,8 +3,9 @@
 @model Mission8.Models.TaskResponse;
 <div>
     <h1>Please enter the following information <br />about an upcoming or ongoing task.</h1>
-    <form method="post">
 
+    @*Form that includes ways of adding information for different tasks*@
+    <form method="post">
         <div asp-validation-summary="All"></div>
 
         <label asp-for="Task">Enter the task description:</label>

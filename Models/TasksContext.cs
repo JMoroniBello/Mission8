@@ -25,8 +25,6 @@ namespace Mission8.Models
         public DbSet<TaskResponse> Responses { get; set; }
 
         public DbSet<Category> Categories { get; set; }
-        //seed database
-
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<Category>().HasData(
@@ -36,6 +34,7 @@ namespace Mission8.Models
                     new Category { CategoryId = 4, CategoryName = "Church" }
                 );
 
+            //Seeding the database with a few entries
             mb.Entity<TaskResponse>().HasData(
 
                 new TaskResponse

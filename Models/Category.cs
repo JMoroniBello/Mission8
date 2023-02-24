@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mission8.Models
 {
+    //Building out the separate category table
     public class Category
     {
         [Key]

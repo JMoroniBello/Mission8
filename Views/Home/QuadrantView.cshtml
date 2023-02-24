@@ -5,7 +5,7 @@
 
 @model List<TaskResponse>
 
-
+@*CSS for Quadrant View page*@
 <head>
     <style type="text/css">
         table {
@@ -40,6 +40,8 @@
         </tr>
         <tr>
             <th>Important</th>
+
+            @*Each quadrant assigned according to urgency, along with actions to be able to edit or delete a record*@
             <td class="quadrant">
                 @foreach (var x in Model)
                 {
