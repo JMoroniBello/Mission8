@@ -31,10 +31,10 @@ namespace Mission8.Controllers
 
         public IActionResult QuadrantView()
         {
-            var applications = theContext.Responses
+            var applications = theContext.Responses;
                 //.Include(x => x.Categories)
                 //.OrderBy(x => x.Title)
-                .ToList();
+                //.ToList();
 
             return View(applications);
         }
