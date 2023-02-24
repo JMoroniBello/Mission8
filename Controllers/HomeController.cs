@@ -54,8 +54,10 @@ namespace Mission8.Controllers
                 return View();
             }
         }
-        //View that allows us to see the table that shows the Quadrant table
 
+
+        //View that allows us to see the table that shows the Quadrant table
+        [HttpGet]
         public IActionResult QuadrantView()
         {
             var application = theContext.Responses.ToList();
