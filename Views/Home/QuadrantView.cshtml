@@ -2,10 +2,11 @@
     ViewData["Title"] = "Task List";
 }
 
+
 @model List<TaskResponse>
 
-<head>
 
+<head>
     <style type="text/css">
         table {
             border-collapse: collapse;
@@ -23,28 +24,13 @@
             background-color: #f2f2f2;
         }
 
-        .quadrant-one {
-            background-color: #f44336;
-            color: #fff;
-        }
-
-        .quadrant-two {
-            background-color: #ffc107;
+        .quadrant {
+            background-color: #d2b48c;
             color: #000;
         }
-
-        .quadrant-three {
-            background-color: #4caf50;
-            color: #fff;
-        }
-
-        .quadrant-four {
-            background-color: #2196f3;
-            color: #fff;
-        }
     </style>
-
 </head>
+
 <body>
     <table>
         <tr>
@@ -54,43 +40,64 @@
         </tr>
         <tr>
             <th>Important</th>
-            <td class="quadrant-one">Quadrant One</td>
+            <td class="quadrant">
+                @foreach (var x in Model)
+                {
+                    @if (@x.Quadrant == 1 && @x.Completed == false)
+                    {
 
-            @foreach (var x in Model)
-            {
-                @if (@x.Quadrant == 1)
-                {
-                    <td>@x.Task, Due: @x.DueDate, @x.Completed </td>
+                        <a>@x.Task | Due: @x.DueDate &emsp;</a>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a><br /><br />
+
+                     }
                 }
-            }
-            <td class="quadrant-two">Quadrant Two</td>
-            @foreach (var x in Model)
-            {
-                @if (@x.Quadrant == 2)
+            </td>
+
+            <td class="quadrant">
+                @foreach (var x in Model)
                 {
-                    <td>@x.Task, Due: @x.DueDate, @x.Completed </td>
+                    @if (@x.Quadrant == 2 && @x.Completed == false)
+                    {
+
+                        <a>@x.Task | Due: @x.DueDate &emsp;</a>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a><br /><br />
+
+                    }
                 }
-            }
-        </tr>
+            </td>
+
+            </tr>
         <tr>
             <th>Not Important</th>
-            <td class="quadrant-three">Quadrant Three</td>
-            @foreach (var x in Model)
-            {
-                @if (@x.Quadrant == 3)
+            <td class="quadrant">
+                @foreach (var x in Model)
                 {
-                    <td>@x.Task, Due: @x.DueDate, @x.Completed </td>
-                }
-            }
+                    @if (@x.Quadrant == 3 && @x.Completed == false)
+                    {
 
-            <td class="quadrant-four">Quadrant Four</td>
-            @foreach (var x in Model)
-            {
-                @if (@x.Quadrant == 4)
-                {
-                    <td>@x.Task, Due: @x.DueDate, @x.Completed </td>
+                        <a>@x.Task | Due: @x.DueDate &emsp;</a>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a><br /><br />
+
+                    }
                 }
-            }
+            </td>
+
+            <td class="quadrant">
+                @foreach (var x in Model)
+                {
+                    @if (@x.Quadrant == 4 && @x.Completed == false)
+                    {
+
+                        <a>@x.Task | Due: @x.DueDate &emsp;</a>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a><br /><br />
+
+                    }
+                }
+            </td>
         </tr>
     </table>
 </body>

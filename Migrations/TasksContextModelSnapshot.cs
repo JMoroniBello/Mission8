@@ -95,7 +95,7 @@ namespace Mission8.Migrations
                             CategoryId = (byte)2,
                             Completed = true,
                             DueDate = "Today",
-                            Quadrant = (byte)1,
+                            Quadrant = (byte)2,
                             Task = "Eat"
                         },
                         new
@@ -104,7 +104,7 @@ namespace Mission8.Migrations
                             CategoryId = (byte)3,
                             Completed = false,
                             DueDate = "Today",
-                            Quadrant = (byte)1,
+                            Quadrant = (byte)3,
                             Task = "Eat"
                         },
                         new
@@ -113,7 +113,7 @@ namespace Mission8.Migrations
                             CategoryId = (byte)4,
                             Completed = true,
                             DueDate = "Today",
-                            Quadrant = (byte)1,
+                            Quadrant = (byte)4,
                             Task = "Eat"
                         });
                 });

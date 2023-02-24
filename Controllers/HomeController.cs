@@ -56,7 +56,7 @@ namespace Mission8.Controllers
         }
 
 
-        //View that allows us to see the table that shows the Quadrant table
+        //View that allows us to see the view that shows the Quadrant table
         [HttpGet]
         public IActionResult QuadrantView()
         {
@@ -65,7 +65,7 @@ namespace Mission8.Controllers
             return View(application);
         }
         
-        //Views 
+        //Action for editing something that is in the table
         public IActionResult Edit(int taskid)
         {
             ViewBag.Categories = theContext.Categories.ToList();

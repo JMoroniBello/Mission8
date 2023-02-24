@@ -57,7 +57,7 @@ namespace Mission8.Models
                     CategoryId = 2,
                     Task = "Eat",
                     DueDate = "Today",
-                    Quadrant = 1,
+                    Quadrant = 2,
                     Completed = true
                 },
 
@@ -67,7 +67,7 @@ namespace Mission8.Models
                     CategoryId = 3,
                     Task = "Eat",
                     DueDate = "Today",
-                    Quadrant = 1,
+                    Quadrant = 3,
                     Completed = false
                 },
 
@@ -77,7 +77,7 @@ namespace Mission8.Models
                     CategoryId = 4,
                     Task = "Eat",
                     DueDate = "Today",
-                    Quadrant = 1,
+                    Quadrant = 4,
                     Completed = true
                 }
             );

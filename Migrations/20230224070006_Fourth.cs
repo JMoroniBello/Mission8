@@ -2,7 +2,7 @@
 
 namespace Mission8.Migrations
 {
-    public partial class Second : Migration
+    public partial class Fourth : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -69,17 +69,17 @@ namespace Mission8.Migrations
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 2, (byte)2, true, "Today", (byte)1, "Eat" });
+                values: new object[] { 2, (byte)2, true, "Today", (byte)2, "Eat" });
 
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 3, (byte)3, false, "Today", (byte)1, "Eat" });
+                values: new object[] { 3, (byte)3, false, "Today", (byte)3, "Eat" });
 
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 4, (byte)4, true, "Today", (byte)1, "Eat" });
+                values: new object[] { 4, (byte)4, true, "Today", (byte)4, "Eat" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Responses_CategoryId",

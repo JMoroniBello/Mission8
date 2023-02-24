@@ -1,0 +1,41 @@
+﻿@{ ViewData["Title"] = "Add Task";
+}
+@model Mission8.Models.TaskResponse;
+<div>
+    <h1>Please enter the following information <br />about an upcoming or ongoing task.</h1>
+    <form method="post">
+
+        <div asp-validation-summary="All"></div>
+
+        <label asp-for="Task">Enter the task description:</label>
+        <input class="input-group-text" asp-for="Task" />
+
+        <label asp-for="DueDate">Enter the due date:</label>
+        <input class="input-group-text" asp-for="DueDate" />
+
+        <label asp-for="Quadrant">Importance/Urgency</label>
+        <select class="input-group-text" asp-for="Quadrant">
+            <option value="">Select an option</option>
+            <option value="1">Important/Urgent</option>
+            <option value="2">Important/Not Urgent</option>
+            <option value="3">Not Important/Urgent</option>
+            <option value="4">Not Important/Not Urgent</option>
+        </select>
+
+        <br />
+        <label asp-for="Completed"></label>
+        <input asp-for="Completed" />
+        <br />
+
+        <label asp-for="CategoryId">Category</label>
+        <select class="input-group-text" asp-for="CategoryId">
+            <option value="">Select an option</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryName</option>
+            }
+        </select>
+        <br />
+        <button class="input-group-text btn-primary" type="submit">Submit</button>
+    </form>
+</div>

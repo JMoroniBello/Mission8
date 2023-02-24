@@ -14,6 +14,7 @@ namespace Mission8.Models
         public int TaskId { get; set; }
         [Required]
         public string Task { get; set; }
+        [Required]
         public string DueDate { get; set; }
         [Required]
         public byte Quadrant { get; set; }
